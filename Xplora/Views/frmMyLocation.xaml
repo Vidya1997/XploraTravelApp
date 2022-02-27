@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xplora.Views.frmMyLocation">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+           
+            <Label Text="Welcome to Xplora Location"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+                <Editor x:Name="txtAreacode" Placeholder="Area Code" IsReadOnly="True"/>
+                <Editor x:Name="txtCountryCode" Placeholder="Country Code" IsReadOnly="True"/>
+                <Editor x:Name="txtCountryName" Placeholder="Country Name" IsReadOnly="True"/>
+                <Editor x:Name="txtFeatureName" Placeholder="Feature Name" IsReadOnly="True"/>
+                <Editor x:Name="txtLocality" Placeholder="Locality" IsReadOnly="True"/>
+                <Editor x:Name="txtPostalcode" Placeholder="Postal Code" IsReadOnly="True"/>
+                <Editor x:Name="txtSubAdminArea" Placeholder="Sub Admin Area" IsReadOnly="True"/>
+                <Editor x:Name="txtSubLocality" Placeholder="Sub Locality" IsReadOnly="True"/>
+                <Editor x:Name="txtSubThoroughfare" Placeholder="Sub Thorough fare" IsReadOnly="True"/>
+                <Editor x:Name="txtThoroughfare" Placeholder="Thorough fare" IsReadOnly="True"/>
+                <Editor x:Name="txtLatitude" Placeholder="Latitude" IsReadOnly="True"/>
+                <Editor x:Name="txtLongitude" Placeholder="Longitude" IsReadOnly="True"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

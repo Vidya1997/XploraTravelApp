@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xplora.Views.frmMyPlaces"
+             BackgroundImageSource="bg2.jpg">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xplora!" FontAttributes="Bold" TextDecorations="Underline"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" FontSize="Medium" />
+            <CollectionView x:Name="cltvCollectionView" SelectionMode="Single" SelectionChanged="OncltvCollectionViewSelectionChanged">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10" Margin="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding fldnoofpresons}" Grid.Column="0" FontAttributes="Bold" />
+                            <Label Text="{Binding fldGrandTotal}" Grid.Column="1" HorizontalOptions="EndAndExpand" FontAttributes="Bold" FontSize="Medium"/>
+                            <Label Text="{Binding fldtblplace}" Grid.Row="1" TextColor="DarkMagenta" Grid.ColumnSpan="2" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large"/>
+                            <BoxView BackgroundColor="Gray" Grid.Row="2" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="3" Grid.ColumnSpan="2"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button x:Name="btnAdd" Text="+" FontSize="Large" BackgroundColor="Wheat" Clicked="OnbtnAddClicked"  CornerRadius="50" HorizontalOptions="End" VerticalOptions="EndAndExpand"  WidthRequest="50" Padding="10,10,10,10" Margin="10,10,10,10"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

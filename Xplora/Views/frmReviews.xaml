@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="Xplora.Views.frmReviews">
+    <ContentPage.Content>
+        <xct:TabView TabStripPlacement="Bottom" BackgroundColor="Cyan" TabStripBorderColor="DarkBlue"  >
+            <xct:TabViewItem Text="My Reviews" FontAttributes="Bold" >
+                <xct:TabViewItem.Content>
+                    <StackLayout BackgroundColor="LightCyan" Margin="20,20,20,20" Padding="10,10,10,10" >
+                        <Label Text="Welcome to Xplora Reviews" FontAttributes="Bold" FontSize="Large" TextDecorations="Underline" 
+                HorizontalOptions="Center" TextColor="DarkGoldenrod" />
+                        <Picker x:Name="piPlaces" ItemDisplayBinding="{Binding fldtblplace}" Title="Pick a Place"/>
+                        <Picker x:Name="piRatings" Title="Pick a Rating">
+                            <Picker.Items>
+                                <x:String>1</x:String>
+                                <x:String>2</x:String>
+                                <x:String>3</x:String>
+                                <x:String>4</x:String>
+                                <x:String>5</x:String>
+                            </Picker.Items>
+                        </Picker>
+                        <Editor x:Name="txtReview" Placeholder="Reviews"  HeightRequest="250" AutoSize="TextChanges"/>
+                        <Grid VerticalOptions="EndAndExpand" Padding="10,10,10,10" RowDefinitions="auto">
+                        <Button x:Name="btnSubmit" CornerRadius="30" Text="Submit" Clicked="OnbtnSubmitClicked"  BackgroundColor="LightGreen" BorderColor="Green" BorderWidth="3" Grid.Column="0"/>
+                        <Button x:Name="btnCancel" CornerRadius="30" Text="Cancel" Clicked="OnbtnCancelClicked" BackgroundColor="IndianRed"  BorderColor="Red" BorderWidth="3" Grid.Column="1"/>
+                        </Grid>
+                    </StackLayout>
+                </xct:TabViewItem.Content>
+            </xct:TabViewItem>
+            <xct:TabViewItem Text="All Reviews" FontAttributes="Bold" >
+                <xct:TabViewItem.Content>
+                    <StackLayout BackgroundColor="DarkCyan" Margin="20,20,20,20" Padding="10,10,10,10">
+                        <Label Text="Welcome to Xplora Reviews"
+                FontAttributes="Bold" FontSize="Large" TextDecorations="Underline" TextColor="Gold"
+                HorizontalOptions="CenterAndExpand" />
+                        <Picker x:Name="piStates" Title="Pick a State" ItemDisplayBinding="{Binding fldState}" SelectedIndexChanged="OnpiStateSelectedIndexChanged"/>
+                        <Picker x:Name="piDistricts" Title="Pick a District" ItemDisplayBinding="{Binding fldDistrict}" SelectedIndexChanged="OnpiDistrictsIndexChanged"/>
+                        <Picker x:Name="piPlaces1" ItemDisplayBinding="{Binding fldName}" Title="Pick a Place" SelectedIndexChanged="OnpiPlacesIndexChanged"/>
+                        <CollectionView x:Name="cltvReviews">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Padding="10" Margin="10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+
+                                        </Grid.ColumnDefinitions>
+                                        <Label Text="{Binding fldRating}" Grid.Column="0" FontAttributes="Bold" />
+                                        <Label Text="{Binding fldReview}" Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large"/>
+
+                                        <BoxView BackgroundColor="Gray" Grid.Row="2" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="3" Grid.ColumnSpan="2"/>
+                                    </Grid>
+
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+
+                    </StackLayout>
+                </xct:TabViewItem.Content>
+            </xct:TabViewItem>
+        </xct:TabView>
+        
+    </ContentPage.Content>
+</ContentPage>

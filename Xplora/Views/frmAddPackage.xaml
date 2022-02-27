@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xplora.Views.frmAddPackage">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <BoxView x:Name="bdGradient" Scale="4" AnchorX="1" AnchorY="0">
+                    <BoxView.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Color="#23D5AB" Offset="0.3"/>
+                            <GradientStop Color="#23A605" Offset="0.5" />
+                            <GradientStop Color="#E73C7E" Offset="0.7" />
+                            <GradientStop Color="#EE7752" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </BoxView.Background>
+                </BoxView>
+                <Frame WidthRequest="250" BorderColor="White" BackgroundColor="Transparent"
+               VerticalOptions="Center" HorizontalOptions="Center" >
+                    <Grid Padding="10,10,10,10" Margin="10,10,10,10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition  Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+
+                        </Grid.RowDefinitions>
+                        <Label Text="Welcome to Xplora" TextDecorations="Underline" TextColor="White"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" FontSize="Large" FontAttributes="Bold" Grid.Row="0" Grid.ColumnSpan="2"/>
+                        <Picker x:Name="piStates" Grid.Row="1" Grid.ColumnSpan="2" Title="Pick a State" ItemDisplayBinding="{Binding fldState}" SelectedIndexChanged="OnpiStateSelectedIndexChanged"/>
+                        <Picker x:Name="piDistricts" Grid.Row="2" Grid.ColumnSpan="2" Title="Pick a District" ItemDisplayBinding="{Binding fldDistrict}" SelectedIndexChanged="OnpiDistrictsIndexChanged"/>
+                        <Picker x:Name="piPlaces" Grid.Row="3" Grid.ColumnSpan="2" Title="Pick a Place" ItemDisplayBinding="{Binding fldName}" SelectedIndexChanged="OnpiPlacesIndexChanged"/>
+
+                        <Editor x:Name="txtPackageAmt" Grid.Row="4" Grid.ColumnSpan="2" Placeholder="Package Amount" Keyboard="Numeric"/>
+                        <Editor x:Name="txtToatalTax" Grid.Row="5" Grid.ColumnSpan="2" Placeholder="Total Tax" Keyboard="Numeric"/>
+                        <Editor x:Name="txtServiceCharge" Grid.Row="6" Grid.ColumnSpan="2" Placeholder="Service Charge" Keyboard="Numeric"/>
+                        <Editor x:Name="txtdiscount" Grid.Row="7" Grid.ColumnSpan="2" Placeholder="Discount Amount" Keyboard="Numeric"/>
+                        <Button x:Name="btnSubmit" Grid.Row="8" Grid.Column="0" Text="Submit" Clicked="OnbtnSubmitClicked"/>
+                        <Button x:Name="btnCancel" Grid.Row="8" Grid.Column="1" Text="Cancel" Clicked="OnbtnCancelClicked"/>
+                    </Grid>
+                </Frame>
+            </Grid>
+           
+           
+               
+
+       
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

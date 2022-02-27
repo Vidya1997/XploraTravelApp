@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xplora.Views.frmAddPlaces">
+    <ContentPage.Content>
+        <Grid>
+            <BoxView x:Name="bdGradient" Scale="4" AnchorX="1" AnchorY="0">
+                <BoxView.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#bf00ff" Offset="0.3"/>
+                        <GradientStop Color="#23A605" Offset="0.5" />
+                        <GradientStop Color="#0080ff" Offset="0.7" />
+                        <GradientStop Color="#ac5353" Offset="1.0" />
+                    </LinearGradientBrush>
+                </BoxView.Background>
+            </BoxView>
+            <Frame WidthRequest="3000" BorderColor="White" BackgroundColor="Transparent"
+               VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="3000" >
+                <StackLayout>
+                    <Label Text="Welcome to Xplora"
+                FontSize="Large" FontAttributes="Bold" TextDecorations="Underline" 
+                HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+                    <Grid VerticalOptions="CenterAndExpand"   Padding="10" >
+                        <Picker x:Name="piStates" Title="Pick a State" Grid.Row="0" Grid.Column="0" ItemDisplayBinding="{Binding fldState}" SelectedIndexChanged="OnpiStateSelectedIndexChanged"/>
+                        <Picker x:Name="piDistricts" Title="Pick a District" Grid.Row="0" Grid.Column="1" ItemDisplayBinding="{Binding fldDistrict}" SelectedIndexChanged="OnpiDistrictsIndexChanged"/>
+                        <Editor x:Name="txtPlaceName" Placeholder="Place Name" Grid.Row="1" Grid.ColumnSpan="2" AutoSize="TextChanges" />
+                        <Editor x:Name="txtPlaceAddress" Placeholder="Place Address" Grid.Row="2" Grid.ColumnSpan="2" AutoSize="TextChanges"/>
+                        <Picker x:Name="piType" Title="Pick a Type" Grid.Row="3" Grid.ColumnSpan="2">
+                            <Picker.Items>
+                                <x:String>Fort</x:String>
+                                <x:String>Park</x:String>
+                                <x:String>Historical Place</x:String>
+                                <x:String>Tourist Spot</x:String>
+                                <x:String>Others</x:String>
+                            </Picker.Items>
+                        </Picker>
+                        <Button x:Name="btnSubmit" Text="Submit" BackgroundColor="LightSeaGreen" BorderColor="Green" BorderWidth="3" CornerRadius="30" Clicked="OnbtnSubmitClicked" Grid.Row="4" Grid.Column="0"/>
+                        <Button x:Name="btnCancel" Text="Cancel" BackgroundColor="IndianRed" BorderColor="Red" BorderWidth="3" CornerRadius="30" Clicked="OnbtnCancelClicked" Grid.Row="4" Grid.Column="1"/>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+        </Grid>
+        <!--
+        <StackLayout>
+            <Label Text="Welcome to Xplora"
+                FontSize="Large" FontAttributes="Bold" TextDecorations="Underline" 
+                HorizontalOptions="CenterAndExpand" />
+            <Grid VerticalOptions="CenterAndExpand" Margin="20" BackgroundColor="White" Padding="10" >
+            <Picker x:Name="piStates" Title="Pick a State" Grid.Row="0" Grid.Column="0" ItemDisplayBinding="{Binding fldState}" SelectedIndexChanged="OnpiStateSelectedIndexChanged"/>
+                <Picker x:Name="piDistricts" Title="Pick a District" Grid.Row="0" Grid.Column="1" ItemDisplayBinding="{Binding fldDistrict}" SelectedIndexChanged="OnpiDistrictsIndexChanged"/>
+                <Editor x:Name="txtPlaceName" Placeholder="Place Name" Grid.Row="1" Grid.ColumnSpan="2" AutoSize="TextChanges" />
+                <Editor x:Name="txtPlaceAddress" Placeholder="Place Address" Grid.Row="2" Grid.ColumnSpan="2" AutoSize="TextChanges"/>
+                <Picker x:Name="piType" Title="Pick a Type" Grid.Row="3" Grid.ColumnSpan="2">
+                <Picker.Items>
+                    <x:String>Fort</x:String>
+                    <x:String>Park</x:String>
+                    <x:String>Historical Place</x:String>
+                    <x:String>Tourist Spot</x:String>
+                    <x:String>Others</x:String>
+                </Picker.Items>
+            </Picker>
+                <Button x:Name="btnSubmit" Text="Submit" BackgroundColor="LightSeaGreen" BorderColor="Green" BorderWidth="3" CornerRadius="30" Clicked="OnbtnSubmitClicked" Grid.Row="4" Grid.Column="0"/>
+                <Button x:Name="btnCancel" Text="Cancel" BackgroundColor="IndianRed" BorderColor="Red" BorderWidth="3" CornerRadius="30" Clicked="OnbtnCancelClicked" Grid.Row="4" Grid.Column="1"/>
+            </Grid>
+        </StackLayout>-->
+    </ContentPage.Content>
+</ContentPage>

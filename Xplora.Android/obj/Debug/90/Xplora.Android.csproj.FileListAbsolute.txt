@@ -1,0 +1,3 @@
+F:\SHILPITHA_PROJECTS\Vidya\Xplora\Xplora.Android\obj\Debug\90\MonoAndroid,Version=v9.0.AssemblyAttributes.cs
+F:\SHILPITHA_PROJECTS\Vidya\Xplora\Xplora.Android\obj\Debug\90\build.props
+F:\SHILPITHA_PROJECTS\Vidya\Xplora\Xplora.Android\obj\Debug\90\adb.props

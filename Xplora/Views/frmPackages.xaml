@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xplora.Views.frmPackages">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+            <Label Text="Welcome to Xplora"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Editor x:Name="txtPlaceName" Placeholder="PlaceName" IsReadOnly="True"/>
+            <Label Text="No of Persons"/>
+            <Editor x:Name="txtNoofPersons" IsReadOnly="True" Text="1" Placeholder="No of Persons" Keyboard="Numeric" TextChanged="OntxtNoofPersonsTextChanged"/>
+                <Grid RowDefinitions="auto">
+                    <Button x:Name="btnIncrement" Text="+" Clicked="OnbtnIncrementClicked" Grid.Column="0"/>
+                    <Button x:Name="btnDecrement" Text="-" Clicked="OnbtnDecrementClicked" Grid.Column="1"/>
+
+                </Grid>
+            <Label Text="Package Amount"/>
+            <Editor x:Name="txtPackageAmount" Placeholder="Package Amoount" IsReadOnly="true"/>
+            <Label Text="total Taxes"/>
+                <Editor x:Name="txtTotalTaxes" Placeholder="Total Taxes" IsReadOnly="true"/>
+            <Label Text="Service Charge"/>
+                <Editor x:Name="txtServiceCharge" Placeholder="Service Charge" IsReadOnly="true"/>
+            <Label Text="Total Amount"/>
+                <Editor x:Name="txtTotalAmount" Placeholder="TotalAmount" IsReadOnly="true"/>
+            <Label Text="Discount"/>
+                <Editor x:Name="txtDiscount" Placeholder="Discount Amount" IsReadOnly="true"/>
+            <Label Text="Grand Total"/>
+                <Editor x:Name="txtGrandTotal" Placeholder="Grand Total" IsReadOnly="true"/>
+                <Label Text="Date of Journey"/>
+            <DatePicker x:Name="dtDayofJourney" />
+                <Button x:Name="btnSubmit" Text="Submit" Clicked="OnbtnSubmitClicked"/>
+            <Button x:Name="btnCancel" Text="CANCEL" Clicked="OnbtnCancelClicked"/>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

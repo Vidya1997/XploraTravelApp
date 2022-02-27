@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "e3fef658-4318-430c-a765-e01526c4a86b": {
+      "ProjectGuid": "e3fef658-4318-430c-a765-e01526c4a86b",
+      "DisplayName": "Xplora",
+      "ColorIndex": 0
+    },
+    "904327ce-90d8-40de-b52b-362b33f1436b": {
+      "ProjectGuid": "904327ce-90d8-40de-b52b-362b33f1436b",
+      "DisplayName": "Xplora.Android",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
